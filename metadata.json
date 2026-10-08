@@ -1,0 +1,6 @@
+{
+  "name": "随机矿工 V1.5",
+  "description": "黄金矿工式抓取操作结合 Roguelite 随机路线、天气联动、轻度搜打撤与家园长线成长的复古街机探险游戏。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: #FFFDF7;
+    color: #111827;
+  }
+
+  .font-display {
+    font-family: 'Chakra Petch', 'Noto Sans SC', sans-serif;
+  }
+
+  .font-mono-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Memphis Geometric Polka-Dot Background */
+.memphis-bg {
+  background-color: #FFF9E6;
+  background-image: radial-gradient(#111827 1.25px, transparent 1.25px), radial-gradient(#FF5E7E 1.25px, #FFF9E6 1.25px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+/* Memphis Card & Button Hard Shadows */
+.memphis-card {
+  border: 3px solid #111827;
+  box-shadow: 5px 5px 0px 0px #111827;
+}
+
+.memphis-card-sm {
+  border: 2px solid #111827;
+  box-shadow: 3px 3px 0px 0px #111827;
+}
+
+.memphis-btn {
+  border: 2.5px solid #111827;
+  box-shadow: 3px 3px 0px 0px #111827;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.memphis-btn:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px 0px #111827;
+}
+.memphis-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px #111827;
+}
+
+/* 1. Harsh jagged horizontal jolt when hitting an obstacle/rock */
+@keyframes obstacle-hit-jolt {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  15% { transform: translate(-9px, 3px) rotate(-1.2deg); }
+  35% { transform: translate(8px, -4px) rotate(1.2deg); }
+  55% { transform: translate(-6px, -2px) rotate(-0.8deg); }
+  75% { transform: translate(5px, 2px) rotate(0.5deg); }
+}
+
+.animate-hit-jolt {
+  animation: obstacle-hit-jolt 0.32s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* 2. Satisfying, elastic upward pop when grabbing or collecting a resource */
+@keyframes ore-grab-pop {
+  0% { transform: scale(1) translateY(0); }
+  30% { transform: scale(1.022) translateY(-4px); }
+  65% { transform: scale(0.994) translateY(1.5px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+.animate-grab-pop {
+  animation: ore-grab-pop 0.24s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Custom subtle scrollbars for Memphis panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FEF3C7;
+  border-left: 1px solid #111827;
+}
+::-webkit-scrollbar-thumb {
+  background: #111827;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5E7E;
+}
